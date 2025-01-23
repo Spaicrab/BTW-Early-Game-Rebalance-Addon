@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "earlygamerebalance",
+  "version": "${version}",
+  "name": "Early Game Rebalance Addon",
+  "description": "Tweaks to the Early Game Mechanics and Balancing.",
+  "authors": [
+    "Spaicrab"
+  ],
+  "contact": {
+    "homepage": "https://legacyfabric.net/",
+    "sources": "https://github.com/Legacy-Fabric/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/earlygamerebalance/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "btw:addon": [
+      "btw.community.spaicrab.earlygamerebalance.EarlyGameRebalance"
+    ]
+  },
+  "custom": {
+    "btw:addon_prefix": "EX"
+  },
+  "mixins": [
+    "earlygamerebalance.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": "1.6.4"
+  }
+}
