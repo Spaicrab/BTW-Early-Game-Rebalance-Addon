@@ -4,6 +4,7 @@ Addon to Better Than Wolves Community Edition 3.0+ that Tweaks and Reworks some 
 
 Features so far:
 - Reverted Nerf to Attack Damage when on Low Health
+- Less annoying first stage of Gloom
 
 To Do:
 - Reworked Beds and Respawning

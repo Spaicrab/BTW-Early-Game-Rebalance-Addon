@@ -7,6 +7,9 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(value = StatusEffect.class, remap = false)
 public interface StatusEffectMixin {
     
+    @Accessor("effectivenessMultiplier")
+    public void earlygamerebalance_setEffectivenessMultiplier(float effectivenessMultiplier);
+    
     @Accessor("affectsAttackDamage")
     public void earlygamerebalance_setAffectsAttackDamage(boolean affectsAttackDamage);
 
