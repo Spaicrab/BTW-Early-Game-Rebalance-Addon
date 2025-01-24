@@ -3,12 +3,16 @@
 Addon to Better Than Wolves Community Edition 3.0+ that Tweaks and Reworks some of the Early Game mechanics.
 
 Features so far:
-- Reverted Nerf to Attack Damage when on Low Health
+- Reverted nerf to Attack Damage when on Low Health
 - Less annoying first stage of Gloom
 
 To Do:
-- Reworked Beds and Respawning
-- Time Speedup when standing still (?)
+- Make Stone Pickaxes just sliiightly faster (?)
+- Make Torches pickup-able with Right Click
+- Require Alt-use to be held to pick up items in Fireplaces or Brick Ovens (?)
+- Rework Beds and Respawning
+- Time Speedup when standing still (?) or Sleeping on the ground with a button press
+- Make "disarmed" Creepers run away from you
 - More, in the future
 
 <br>
