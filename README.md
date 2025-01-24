@@ -4,7 +4,7 @@ Addon to Better Than Wolves Community Edition 3.0+ that Tweaks and Reworks some 
 
 Features so far:
 - Reverted nerf to Attack Damage when on Low Health
-- Less annoying first stage of Gloom
+- Shorter Gloom stages and less annoying first stage
 
 To Do:
 - Make Stone Pickaxes just sliiightly faster (?)
