@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import btw.block.blocks.TorchBlockBase;
+import btw.block.blocks.FiniteUnlitTorchBlock;
 import btw.block.blocks.FiniteBurningTorchBlock;
 import btw.block.tileentity.FiniteTorchTileEntity;
 import net.minecraft.src.World;
@@ -32,6 +33,13 @@ public abstract class BlockMixin {
         }
         if (player.getHeldItem() != null) {
             return;
+        }
+
+        if ( ((Object) this) instanceof FiniteUnlitTorchBlock ) {
+            int iMetadata = world.getBlockMetadata(i, j, k);
+            if (FiniteUnlitTorchBlock.getIsBurnedOut(iMetadata)) {
+                return;
+            }
         }
 
         ItemStack stack;
