@@ -7,12 +7,13 @@ Features so far:
 - Shorter Gloom stages and less annoying first stage
 - Less tedious Stone Pickaxes
 - Pickupable Torches
+- Required Alt-Use to pick up items in Fireplaces or Ovens
 
 To Do:
-- Require Alt-use to be held to pick up items in Fireplaces or Brick Ovens (?)
 - Rework Beds and Respawning
 - Time Speedup when standing still (?) or Sleeping on the ground with a button press
 - Make "disarmed" Creepers run away from you
+- Configuration file to turn off unwanted QoL features
 - More, in the future
 
 <br>
