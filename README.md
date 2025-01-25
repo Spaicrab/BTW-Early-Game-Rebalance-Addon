@@ -5,9 +5,9 @@ Addon to Better Than Wolves Community Edition 3.0+ that Tweaks and Reworks some 
 Features so far:
 - Reverted nerf to Attack Damage when on Low Health
 - Shorter Gloom stages and less annoying first stage
+- Less tedious Stone Pickaxes
 
 To Do:
-- Make Stone Pickaxes just sliiightly faster (?)
 - Make Torches pickup-able with Right Click
 - Require Alt-use to be held to pick up items in Fireplaces or Brick Ovens (?)
 - Rework Beds and Respawning

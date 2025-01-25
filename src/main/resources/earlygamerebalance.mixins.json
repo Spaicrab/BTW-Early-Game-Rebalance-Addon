@@ -6,8 +6,10 @@
   "mixins": [
     "EntityPlayerMPMixin",
     "EntityPlayerSPMixin",
+    "ItemMixin",
     "PlayerStatusEffectsMixin",
-    "StatusEffectMixin"
+    "StatusEffectMixin",
+    "ToolItemMixin"
   ],
   "client": [
   ],
