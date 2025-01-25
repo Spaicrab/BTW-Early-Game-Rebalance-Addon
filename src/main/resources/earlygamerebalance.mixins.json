@@ -4,6 +4,7 @@
   "package": "btw.community.spaicrab.earlygamerebalance.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BlockMixin",
     "EntityPlayerMPMixin",
     "EntityPlayerSPMixin",
     "ItemMixin",

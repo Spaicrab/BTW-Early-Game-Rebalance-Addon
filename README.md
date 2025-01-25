@@ -6,9 +6,9 @@ Features so far:
 - Reverted nerf to Attack Damage when on Low Health
 - Shorter Gloom stages and less annoying first stage
 - Less tedious Stone Pickaxes
+- Pickupable Torches
 
 To Do:
-- Make Torches pickup-able with Right Click
 - Require Alt-use to be held to pick up items in Fireplaces or Brick Ovens (?)
 - Rework Beds and Respawning
 - Time Speedup when standing still (?) or Sleeping on the ground with a button press
