@@ -1,6 +1,7 @@
 package btw.community.spaicrab.earlygamerebalance.mixins;
 
 import btw.block.blocks.OvenBlock;
+import btw.community.spaicrab.earlygamerebalance.EarlyGameRebalance;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,7 +24,7 @@ public abstract class OvenBlockMixin {
         float fXClick, float fYClick, float fZClick,
         CallbackInfoReturnable cir
     ) {
-        if (!player.isUsingSpecialKey()) {
+        if (EarlyGameRebalance.altUseToPickUpOvenItems && !player.isUsingSpecialKey()) {
             cir.setReturnValue(false);
         }
 	}

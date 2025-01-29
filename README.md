@@ -7,17 +7,18 @@ Features so far:
 - Shorter Gloom stages and less annoying first stage
 - Less tedious Stone Pickaxes
 - Pickupable Torches
-- Required Alt-Use to pick up items in Fireplaces or Ovens
+- Required Alt-Use to pick up items in Fireplaces or Ovens (Optional - Default: Off)
+- Less expensive Iron Ingots (Optional - Default: On)
 
 To Do:
 - Rework Beds and Respawning
 - Time Speedup when standing still (?) or Sleeping on the ground with a button press
 - Make "disarmed" Creepers run away from you
-- Configuration file to turn off unwanted QoL features
 - More, in the future
 
-<br>
-No Release yet!
+After running the game with the Addon once, you can find the configuration file inside of the config folder.
+
+No Release yet.
 
 ## Quick start guide (FOR DEVELOPERS)
 

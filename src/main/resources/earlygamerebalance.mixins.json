@@ -9,6 +9,7 @@
     "EntityPlayerMPMixin",
     "EntityPlayerSPMixin",
     "ItemMixin",
+    "KilnRecipeMixin",
     "OvenBlockMixin",
     "PlayerStatusEffectsMixin",
     "StatusEffectMixin",
