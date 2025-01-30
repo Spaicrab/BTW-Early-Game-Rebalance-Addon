@@ -21,11 +21,11 @@ public abstract class PlayerStatusEffectsMixin {
 		HURT, INJURED, WOUNDED, CRIPPLED, DYING;
 
 	private static void earlygamerebalance_makeGloomLessAnnoying(StatusEffect gloom) {
-		((StatusEffectMixin) gloom).earlygamerebalance_setEffectivenessMultiplier(0.75f);
+		((StatusEffectMixinAccessor) gloom).earlygamerebalance_setEffectivenessMultiplier(0.75f);
 	}
 
 	private static void earlygamerebalance_revertLowHealthDamageDebuff(StatusEffect healthStatusEffect) {
-		((StatusEffectMixin) healthStatusEffect).earlygamerebalance_setAffectsAttackDamage(false);
+		((StatusEffectMixinAccessor) healthStatusEffect).earlygamerebalance_setAffectsAttackDamage(false);
 	}
 
 	@Inject(method = "<clinit>", at = @At("RETURN"))
