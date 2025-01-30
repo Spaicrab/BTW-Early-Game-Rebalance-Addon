@@ -8,12 +8,11 @@
     "CampfireBlockMixin",
     "EntityPlayerMPMixin",
     "EntityPlayerSPMixin",
-    "ItemMixin",
+    "EnumToolMaterialMixin",
     "KilnRecipeMixin",
     "OvenBlockMixin",
     "PlayerStatusEffectsMixin",
-    "StatusEffectMixin",
-    "ToolItemMixin"
+    "StatusEffectMixinAccessor"
   ],
   "client": [
   ],

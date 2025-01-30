@@ -22,7 +22,7 @@ public abstract class CampfireBlockMixin {
 	private void earlygamerebalance_needAltUseToGrabCampfireItem(
         World world, int i, int j, int k, EntityPlayer player, int iFacing,
         float fXClick, float fYClick, float fZClick,
-        CallbackInfoReturnable cir
+        CallbackInfoReturnable<Boolean> cir
     ) {
         if (EarlyGameRebalance.altUseToPickUpOvenItems && !player.isUsingSpecialKey()) {
             cir.setReturnValue(false);

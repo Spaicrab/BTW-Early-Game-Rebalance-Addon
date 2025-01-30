@@ -12,7 +12,6 @@ import btw.block.blocks.FiniteBurningTorchBlock;
 import btw.block.tileentity.FiniteTorchTileEntity;
 import net.minecraft.src.World;
 import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.TileEntity;
 import net.minecraft.src.ItemStack;
 import btw.item.util.ItemUtils;
 import net.minecraft.src.MathHelper;
@@ -26,8 +25,9 @@ public abstract class BlockMixin {
 	private void earlygamerebalance_pickupTorch(
         World world, int i, int j, int k, EntityPlayer player, int iFacing,
         float fXClick, float fYClick, float fZClick,
-        CallbackInfoReturnable cir
+        CallbackInfoReturnable<Object> cir
     ) {
+        //noinspection ConstantValue
         if ( !( ((Object) this) instanceof TorchBlockBase ) ) {
             return;
         }
@@ -54,10 +54,9 @@ public abstract class BlockMixin {
             stack.setTagCompound(new NBTTagCompound());
             stack.getTagCompound().setLong("outTime", iExpiryTime);
         } else {
-            TileEntity tileEntity = world.getBlockTileEntity(i, j, k);
             stack = new ItemStack(world.getBlockId(i, j, k), 1, 0);
         }
-        
+
         if (stack != null) {
             ItemUtils.givePlayerStackOrEjectFavorEmptyHand(player, stack, i, j, k);
             world.removeBlockTileEntity(i, j, k);

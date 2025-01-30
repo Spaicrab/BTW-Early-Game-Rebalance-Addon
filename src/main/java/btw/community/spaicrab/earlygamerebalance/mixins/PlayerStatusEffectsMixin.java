@@ -2,10 +2,7 @@ package btw.community.spaicrab.earlygamerebalance.mixins;
 
 import btw.util.status.PlayerStatusEffects;
 import btw.util.status.StatusEffect;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -14,18 +11,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class PlayerStatusEffectsMixin {
 
 	@Mutable @Shadow @Final
-    static StatusEffect GLOOM;
+    public static StatusEffect GLOOM;
 
 	@Mutable @Shadow @Final
-    static StatusEffect
+    public static StatusEffect
 		HURT, INJURED, WOUNDED, CRIPPLED, DYING;
 
+	@Unique
 	private static void earlygamerebalance_makeGloomLessAnnoying(StatusEffect gloom) {
-		((StatusEffectMixin) gloom).earlygamerebalance_setEffectivenessMultiplier(0.75f);
+		((StatusEffectMixinAccessor) gloom).earlygamerebalance_setEffectivenessMultiplier(0.75f);
 	}
 
+	@Unique
 	private static void earlygamerebalance_revertLowHealthDamageDebuff(StatusEffect healthStatusEffect) {
-		((StatusEffectMixin) healthStatusEffect).earlygamerebalance_setAffectsAttackDamage(false);
+		((StatusEffectMixinAccessor) healthStatusEffect).earlygamerebalance_setAffectsAttackDamage(false);
 	}
 
 	@Inject(method = "<clinit>", at = @At("RETURN"))

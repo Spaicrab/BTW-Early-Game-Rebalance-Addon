@@ -6,9 +6,9 @@ import btw.BTWAddon;
 import java.util.Map;
 
 public class EarlyGameRebalance extends BTWAddon {
+    @SuppressWarnings("unused")
     private static EarlyGameRebalance instance;
 
-    private Map<String, String> propertyValues;
     public static boolean altUseToPickUpOvenItems = false;
     public static boolean lessExpensiveIronIngots = true;
 
@@ -24,7 +24,10 @@ public class EarlyGameRebalance extends BTWAddon {
     @Override
     public void initialize() {
         AddonHandler.logMessage(this.getName() + " Version " + this.getVersionString() + " Initializing...");
-        
+    }
+
+    @Override
+    public void postInitialize() {
         if (lessExpensiveIronIngots) {
             EarlyGameRebalanceRecipes.earlygamerebalance_lessExpensiveIronIngotsRecipes();
         }
@@ -41,10 +44,8 @@ public class EarlyGameRebalance extends BTWAddon {
 
     @Override
     public void handleConfigProperties(Map<String, String> propertyValues) {
-        this.propertyValues = propertyValues;
-
-        altUseToPickUpOvenItems = Boolean.parseBoolean(this.propertyValues.get("altUseToPickUpOvenItems"));
-        lessExpensiveIronIngots = Boolean.parseBoolean(this.propertyValues.get("lessExpensiveIronIngots"));
+        altUseToPickUpOvenItems = Boolean.parseBoolean(propertyValues.get("altUseToPickUpOvenItems"));
+        lessExpensiveIronIngots = Boolean.parseBoolean(propertyValues.get("lessExpensiveIronIngots"));
     }
 
 }
