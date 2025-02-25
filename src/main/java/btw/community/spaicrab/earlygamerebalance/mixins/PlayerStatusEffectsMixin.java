@@ -28,7 +28,7 @@ public abstract class PlayerStatusEffectsMixin {
 	}
 
 	@Inject(method = "<clinit>", at = @At("RETURN"))
-	private static void earlygamerebalance_PlayerStatusEffectsInitMixin(CallbackInfo ci) {
+	private static void earlygamerebalance_playerStatusEffectsInit(CallbackInfo ci) {
 		earlygamerebalance_makeGloomLessAnnoying(GLOOM);
 
 		earlygamerebalance_revertLowHealthDamageDebuff(HURT);

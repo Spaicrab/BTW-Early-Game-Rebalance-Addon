@@ -5,8 +5,8 @@ Addon to Better Than Wolves Community Edition 3.0+ that Tweaks and Reworks some 
 Features so far:
 - Reverted nerf to Attack Damage when on Low Health
 - Shorter Gloom stages and less annoying first stage
-- Less tedious Stone Tools
-- Pickupable Torches
+- Less tedious early game Block breaking and faster Stone Tools
+- Pickup-able Torches
 - Required Alt-Use to pick up items in Fireplaces or Ovens (Optional - Default: Off)
 - Less expensive Iron Ingots (Optional - Default: On)
 
@@ -16,7 +16,7 @@ To Do:
 - Make "disarmed" Creepers run away from you
 - More, in the future
 
-After running the game with the Addon once, you can find the configuration file inside of the config folder.
+After running the game with the Addon once, you can find the configuration file inside the config folder.
 
 No Release yet.
 
@@ -24,8 +24,8 @@ No Release yet.
 
 * Clone this repository
 * Download the according BTW-CE 3.0+ *intermediary* release
-* Drag&Drop the intermediary .zip file onto the *install.bat*
-* Wait till it fully finishes
+* Drag&Drop the intermediary .zip file onto *install.bat*
+* Wait until it fully finishes
 * Run the gradle task *build* and then *runClient*
 
 Also check out the [BTW Addon Template](https://github.com/BTW-Community/BTW-gradle-fabric-example/tree/CE-3.0.0) that this addon is built off of for more information.
