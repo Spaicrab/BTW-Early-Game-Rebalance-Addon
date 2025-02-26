@@ -1,6 +1,7 @@
 package btw.community.spaicrab.earlygamerebalance.mixins;
 
 import net.minecraft.src.Block;
+import btw.community.spaicrab.earlygamerebalance.EarlyGameRebalance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,23 +22,26 @@ import btw.world.util.WorldUtils;
 @Mixin(Block.class)
 public abstract class BlockMixin {
     
-	@Inject(method = "onBlockActivated", at = @At("RETURN"))
+	@Inject(method = "onBlockActivated", at = @At("RETURN"), cancellable = true)
 	private void earlygamerebalance_pickupTorch(
         World world, int i, int j, int k, EntityPlayer player, int iFacing,
         float fXClick, float fYClick, float fZClick,
-        CallbackInfoReturnable<Object> cir
+        CallbackInfoReturnable<Boolean> cir
     ) {
         //noinspection ConstantValue
-        if ( !( ((Object) this) instanceof TorchBlockBase ) ) {
-            return;
-        }
-        if (player.getHeldItem() != null) {
+        if (
+            !( EarlyGameRebalance.altUseToPickUpTorches == player.isUsingSpecialKey() ) ||
+            !( ((Object) this) instanceof TorchBlockBase ) ||
+            player.getHeldItem() != null
+        ) {
+            cir.cancel();
             return;
         }
 
         if ( ((Object) this) instanceof FiniteUnlitTorchBlock ) {
             int iMetadata = world.getBlockMetadata(i, j, k);
             if (FiniteUnlitTorchBlock.getIsBurnedOut(iMetadata)) {
+                cir.cancel();
                 return;
             }
         }
@@ -57,12 +61,10 @@ public abstract class BlockMixin {
             stack = new ItemStack(world.getBlockId(i, j, k), 1, 0);
         }
 
-        if (stack != null) {
-            ItemUtils.givePlayerStackOrEjectFavorEmptyHand(player, stack, i, j, k);
-            world.removeBlockTileEntity(i, j, k);
-            world.setBlockWithNotify(i, j, k, 0);
-        }
-
+        ItemUtils.givePlayerStackOrEjectFavorEmptyHand(player, stack, i, j, k);
+        world.removeBlockTileEntity(i, j, k);
+        world.setBlockWithNotify(i, j, k, 0);
+        cir.setReturnValue(true);
     }
 
 }
